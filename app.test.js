@@ -2,24 +2,38 @@ const request = require('supertest');
 const app = require('./app').app;
 const build = require('./app').productBuilder;
 
+let objtoAdd = {
+    name: "ExampleName",
+    description: "ExampleDescription",
+    price: 5.99,
+    count: 1
+};
+
+let objUpdate = {
+    _id: "", //We will get this after we have created the record
+    name: "new name",
+    description: "new desc",
+    price: 99.99,
+    count: 2
+};
+
+
 // TEST THE REST API ENDPOINT FOR POST
 describe('POST requests', () => {
 
     test('POST product/create-new endpoint, expect 201', async () => {
-        const service = '{"name":"Product 1", "description":"this is the first product", "price":5.99, "count": 1}'
-        const res = await (await request(app).post('/product/create-new')).send(service)
-        expect(res.statusCode).toBe(200);
+        const res = await (await request(app).post('/product/create-new')).send(objtoAdd)
+        expect(res.statusCode).toBe(201);
+        objUpdate._id = res.body._id
     });
 
     test('POST bad endpoint, expect 404', async () => {
-        const service = '{"name":"Product 2", "description":"this is the second product", "price":5.99, "count": 1}'
-        const res = await (await request(app).post('/product/createnew')).send(service)
+        const res = await (await request(app).post('/product/createnew')).send(objtoAdd)
         expect(res.statusCode).toBe(404);
     });
 
     test('POST bad request, expect 400', async () => {
-        const service = '{"product-name":"Product 3", "description":"this is the third product", "price":5.99, "count": 1}'
-        const res = await (await request(app).post('/product/create-new')).send(service)
+        const res = await (await request(app).post('/product/create-new')).send(objtoAdd)
         expect(res.statusCode).toBe(400);
     });
 
@@ -29,35 +43,29 @@ describe('POST requests', () => {
 describe('PUT request', () => {
     
     test('PUT product/update/:id endpoint, expect 202', async () => {
-        const service = '{"name":"Product 2", "description":"this is the first product", "price":5.99, "count": 1}'
-        const res = await (await request(app).put('/product/update/:id')).send(service)
+        const res = await (await request(app).put('/product/update/:id')).send(objUpdate)
         expect(res.statusCode).toBe(202);
     });
 
     test('PUT product/update/:id/:count endpoint, expect 202', async () => {
-        const res = await (await request(app).put('/product/update-count/:id/:count'))
         expect(res.statusCode).toBe(202);
     });
 
     test('PUT bad endpoint, expect 404', async () => {
-        const service = '{"name":"Product 2", "description":"this is the first product", "price":5.99, "count": 1}'
-        const res = await (await request(app).put('/product/update:id')).send(service)
+        const res = await (await request(app).put('/product/update:id')).send(objUpdate)
         expect(res.statusCode).toBe(404);
     });
 
     test('PUT bad endpoint, expect 404', async () => {
-        const res = await (await request(app).put('/product/update-count/:id:count'))
         expect(res.statusCode).toBe(404);
     });
 
     test('PUT bad request, expect 400', async () => {
-        const service = '{"name":"Product 2", "description":"this is the first product", "price":5.99, "count": 1}'
-        const res = await (await request(app).put('/product/update/')).send(service)
+        const res = await (await request(app).put('/product/update/')).send(objUpdate)
         expect(res.statusCode).toBe(400);
     });
 
     test('PUT bad request, expect 400', async () => {
-        const res = await (await request(app).put('/product/update-count/:id/'))
         expect(res.statusCode).toBe(400);
     });
 
@@ -110,13 +118,6 @@ describe('DELETE requests', () => {
 
 // UNIT TEST THE PRODUCT BUILDER
 describe('Unit Tests', () => {
-
-    let obj = {
-        name: "ExampleName",
-        description: "ExampleDescription",
-        price: 5.99,
-        count: 1
-    };
 
     test('product object builder', () => {
         expect(productBuilder("ExampleName", "ExampleDescription", 5.99, 1)).toEqual(obj);
