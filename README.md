@@ -19,7 +19,7 @@ This tool contains API calls that will:
 * Delete a product
 
 ## Technologies
-https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
 ## Installation
 To install the application, you will need to install a number of dependencies using the below command:
