@@ -2,13 +2,13 @@
 This application is designed to provide a mock API service to a virtual products database. This is designed to demonstrate how NodeJS can be deployed to deliver a RESTful API service.
 
 ## Table of Contents
-[General Info](#general-info)
-[Technologies](#technologies)
-[Installation](#installation)
-[Running the Application](#running-the-application)
-[Closing the Application](#closing-the-application)
-[Application Functionality](#application-functionality)
-[Testing the Application](#testing-the-application)
+[General Info](#general-info)   |   
+[Technologies](#technologies)   |   
+[Installation](#installation)   |   
+[Running the Application](#running-the-application)   |   
+[Closing the Application](#closing-the-application)   |   
+[Application Functionality](#application-functionality)   |   
+[Testing the Application](#testing-the-application)   |   
 
 ## General Info
 This Node JS application provides a range of RESTful API actions against a dummy virtual database. This application is designed to deomstrate how NodeJS can be used to create sufficent connectivity between a dummy database and the command line in order to impact hypothetical data.
@@ -19,7 +19,7 @@ This tool contains API calls that will:
 * Delete a product
 
 ## Technologies
-https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
 ## Installation
 To install the application, you will need to install a number of dependencies using the below command:
