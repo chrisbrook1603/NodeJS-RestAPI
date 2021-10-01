@@ -2,13 +2,13 @@
 This application is designed to provide a mock API service to a virtual products database. This is designed to demonstrate how NodeJS can be deployed to deliver a RESTful API service.
 
 ## Table of Contents
-[General Info](#general-info)
-[Technologies](#technologies)
-[Installation](#installation)
-[Running the Application](#running-the-application)
-[Closing the Application](#closing-the-application)
-[Application Functionality](#application-functionality)
-[Testing the Application](#testing-the-application)
+[General Info](#general-info)   |   
+[Technologies](#technologies)   |   
+3[Installation](#installation)   |   
+[Running the Application](#running-the-application)   |   
+[Closing the Application](#closing-the-application)   |   
+[Application Functionality](#application-functionality)   |   
+[Testing the Application](#testing-the-application)   |   
 
 ## General Info
 This Node JS application provides a range of RESTful API actions against a dummy virtual database. This application is designed to deomstrate how NodeJS can be used to create sufficent connectivity between a dummy database and the command line in order to impact hypothetical data.
