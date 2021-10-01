@@ -4,7 +4,7 @@ This application is designed to provide a mock API service to a virtual products
 ## Table of Contents
 [General Info](#general-info)   |   
 [Technologies](#technologies)   |   
-3[Installation](#installation)   |   
+[Installation](#installation)   |   
 [Running the Application](#running-the-application)   |   
 [Closing the Application](#closing-the-application)   |   
 [Application Functionality](#application-functionality)   |   
