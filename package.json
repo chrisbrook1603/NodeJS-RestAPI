@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-restapi",
+  "version": "0.0.1",
+  "description": "Simple Rest API enabled application built in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon start.js",
+    "test": "jest --coverage --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisbrook1603/NodeJS-RestAPI.git"
+  },
+  "author": "Chris Brook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisbrook1603/NodeJS-RestAPI/issues"
+  },
+  "homepage": "https://github.com/chrisbrook1603/NodeJS-RestAPI#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.2",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "supertest": "^6.1.6"
+  },
+  "devDependencies": {
+    "jest": "^27.2.4"
+  }
+}
