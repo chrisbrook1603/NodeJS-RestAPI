@@ -19,7 +19,7 @@ echo "cloning latest git repository"
 sudo git clone https://github.com/chrisbrook1603/NodeJS-RestAPI
 
 echo "creating dockerfile"
-echo -e "FROM node:14 WORKDIR /usr/src/app COPY package*.json ./ RUN npm install COPY . . EXPOSE 8080 CMD [ 'node', 'start.js' ]"
+echo -e "FROM node:14 \nWORKDIR /usr/src/app \nCOPY package*.json ./ n\RUN npm install n\COPY . . n\EXPOSE 8080 n\CMD [ 'node', 'start.js' ]"
 
 echo "build image"
 sudo docker build . t <username>/nodeapiproject
