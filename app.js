@@ -2,7 +2,6 @@
 const express = require('express'); 
 const app = express(); 
 const bodyParser = require('body-parser'); 
-const port = 8080; 
 const httpSuccessID = 200; 
 const httpCreateID = 201;
 const httpAcceptID = 202;
