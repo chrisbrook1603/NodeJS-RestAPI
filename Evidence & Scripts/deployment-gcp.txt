@@ -1,0 +1,9 @@
+curl -s -X GET http://34.65.208.140:8080/product/read
+
+$ curl -s -X POST http://34.65.208.140:8080/product/create-new -H 'Content-type:application/json' -d '{"name":"example product", "description":"this is an example", "price":9.99, "count" : 1}'
+
+gcloud container clusters get-credentials node-api-clusterr --zone europe-west6-a
+
+kubectl create deployment nodeapiproject --image=europe-west6-a-docker.pkg.dev/${PROJECT_ID}/nodeapiproject/nodeapiproject:latest
+
+kubectl scale deployment nodeapiproject  --replicas=2
